@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Complixity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="api-styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="assets/complixity-logo.png" alt="Complixity" class="logo-image">
+            <span class="logo-text">Complixity</span>
+        </a>
+        <div class="nav-links">
+            <a href="features.html">Features</a>
+            <a href="api.html" class="active">API</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- API Documentation Container -->
+    <div class="api-container">
+        <!-- Left Sidebar Navigation -->
+        <div class="api-nav">
+            <div class="nav-section">
+                <h3>Getting Started</h3>
+                <ul>
+                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#authentication">Authentication</a></li>
+                    <li><a href="#errors">Errors</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>Core Resources</h3>
+                <ul>
+                    <li><a href="#compliance">Compliance Checks</a></li>
+                    <li><a href="#monitoring">Real-time Monitoring</a></li>
+                    <li><a href="#alerts">Alert Configuration</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Middle Documentation Content -->
+        <div class="api-content">
+            <div class="content-section" id="introduction">
+                <h1>Introduction</h1>
+                <p>The Complixity API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.</p>
+                
+                <div class="api-attribute">
+                    <h2>Base URL</h2>
+                    <p>All API requests should be made to:</p>
+                    <div class="attribute-value">
+                        <code>https://api.complixity.com/v1/</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" id="authentication">
+                <h2>Authentication</h2>
+                <p>The Complixity API uses API keys to authenticate requests. You can view and manage your API keys in the Dashboard.</p>
+                
+                <div class="api-attribute">
+                    <h3>API Keys</h3>
+                    <p>Authentication is performed via HTTP Bearer Auth. Provide your API key as the bearer token value.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="compliance">
+                <h2>Compliance Checks</h2>
+                <p>Create a compliance check to verify regulatory adherence of any document or process.</p>
+                
+                <div class="api-attribute">
+                    <h3>Create a compliance check</h3>
+                    <p>Creates a new compliance check with the provided parameters.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Code Examples -->
+        <div class="api-code">
+            <div class="code-section" id="introduction-code">
+                <div class="code-sample">
+                    <div class="code-header">
+                        <span class="language">curl</span>
+                    </div>
+                    <pre><code>curl https://api.complixity.com/v1/compliance \
+  -H "Authorization: Bearer sk_test_123456789" \
+  -d document="policy.pdf" \
+  -d type="privacy_policy"</code></pre>
+                </div>
+                
+                <div class="code-sample">
+                    <div class="code-header">
+                        <span class="language">Response</span>
+                    </div>
+                    <pre><code>{
+  "id": "chk_1234567890",
+  "object": "compliance_check",
+  "status": "compliant",
+  "created": 1643673600,
+  "score": 0.98
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

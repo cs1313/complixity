@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 5%;
+    padding: 1rem 5%;
     background: #000;
     position: fixed;
     width: 100%;
@@ -40,15 +40,15 @@ body {
 }
 
 .logo-image {
-    width: 45px;
-    height: 45px;
+    width: 128px;
+    height: 128px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .logo-text {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2.4rem;
+    font-weight: 600;
     color: #fff;
 }
 
@@ -59,7 +59,7 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
@@ -473,6 +473,54 @@ body {
 .features-section {
     margin-top: 2rem;
     /* Rest of the features-section styles remain the same */
+}
+
+/* Navbar specific logo styles */
+.navbar .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.navbar .logo-image {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.navbar .logo-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Most specific logo styles */
+nav.navbar .logo-link .logo-image {
+    width: 64px !important;
+    height: 64px !important;
+    object-fit: cover;
+}
+
+nav.navbar .logo-link .logo-text {
+    font-size: 1.8rem !important;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Adjust navbar container */
+nav.navbar {
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo link container */
+nav.navbar .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .

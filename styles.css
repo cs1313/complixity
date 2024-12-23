@@ -77,10 +77,14 @@ body {
 .nav-links .cta-button {
     background: var(--primary-blue);
     color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.8rem 1.5rem !important;
+    border-radius: 8px !important;
     transition: all 0.2s ease;
     margin-left: 1rem;
+    font-size: 1rem !important;
+    white-space: nowrap !important;
+    min-width: 120px !important;
+    text-align: center !important;
 }
 
 .nav-links .cta-button:hover {
@@ -108,6 +112,7 @@ body {
     margin-bottom: 1.25rem;
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     white-space: nowrap;
@@ -175,6 +180,7 @@ body {
     margin-bottom: 1rem;
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     display: inline-block;
 }
@@ -201,46 +207,58 @@ body {
     transform: translateY(-5px);
 }
 
-.flag-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.flag-container {
+    width: 100px;
+    height: 60px;
     margin: 0 auto 1rem;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    border: 3px solid #f0f0f0;
+    background-repeat: no-repeat;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .uk { 
     background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1920px-Flag_of_the_United_Kingdom.svg.png');
-    background-size: cover;
 }
-.usa { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png'); }
-.eu { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1920px-Flag_of_Europe.svg.png'); }
-.india { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1920px-Flag_of_India.svg.png'); }
-.brazil { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/1920px-Flag_of_Brazil.svg.png'); }
-.uae { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1920px-Flag_of_the_United_Arab_Emirates.svg.png'); }
-.japan { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/1920px-Flag_of_Japan.svg.png'); }
-.australia { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png'); }
-.singapore { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/1920px-Flag_of_Singapore.svg.png'); }
-.canada { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1920px-Flag_of_Canada_%28Pantone%29.svg.png'); }
-
-.regulator-card p a {
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+.usa { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png');
+}
+.eu { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1920px-Flag_of_Europe.svg.png');
+}
+.india { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1920px-Flag_of_India.svg.png');
+}
+.brazil { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/1920px-Flag_of_Brazil.svg.png');
+}
+.uae { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1920px-Flag_of_the_United_Arab_Emirates.svg.png');
+}
+.japan { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/1920px-Flag_of_Japan.svg.png');
+}
+.australia { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png');
+}
+.singapore { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/1920px-Flag_of_Singapore.svg.png');
+}
+.canada { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1920px-Flag_of_Canada_%28Pantone%29.svg.png');
 }
 
-.regulator-card p a:hover {
-    color: var(--accent-green);
+.usa, .australia, .uae, .japan, .eu { 
+    background-size: contain;
 }
 
 .regulator-card p a:not(:last-child):after {
-    content: ", ";
-    margin-right: 0.2rem;
-    color: var(--text-dark);
+    content: none;
+}
+
+.regulator-card p a {
+    text-decoration: none;
+    color: var(--primary-blue);
 }
 
 .features {
@@ -280,6 +298,7 @@ body {
     margin-bottom: 1.5rem;
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -341,6 +360,7 @@ body {
     margin-bottom: 1rem;
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     display: inline-block;
 }
@@ -514,6 +534,7 @@ nav.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: static;
 }
 
 /* Logo link container */
@@ -521,6 +542,37 @@ nav.navbar .logo-link {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* Center the nav links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: static;
+    left: auto;
+    transform: none;
+}
+
+/* Standardize the CTA button in navbar - more specific selector */
+nav.navbar .nav-links .cta-button {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    height: 42px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.singapore, .canada { 
+    background-size: 85%;
 }
 
 .
